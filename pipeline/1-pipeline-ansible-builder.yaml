@@ -10,7 +10,7 @@ spec:
   - name: git-url
     type: string
     description: url of the git repo for the code of deployment
-    default: https://github.com/jtudelag/ansible-execution-environments.git
+    default: https://github.com/jeanphilippelevy/ansible-ees.git
   - name: git-revision
     type: string
     description: revision to be used from repo of the code for deployment (Commit id)
@@ -23,7 +23,7 @@ spec:
   - name: ANSIBLE_BUILDER_IMAGE
     description: The location of the ansible-builder image.
     type: string
-    default: registry.redhat.io/ansible-automation-platform-21/ansible-builder-rhel8:1.0.1-47
+    default: registry.redhat.io/ansible-automation-platform-23/ansible-builder-rhel8:latest
   # - name: OUTPUT_FILE
   #   description: Output of the ansible-builder, either Dockerfile or Containerfile.
   #   type: string
