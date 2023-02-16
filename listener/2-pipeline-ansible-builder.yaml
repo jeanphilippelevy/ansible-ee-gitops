@@ -23,7 +23,7 @@ spec:
   - description: Name of the container image to be built
     name: NAME
     type: string
-    default: quay.io/repository/rhn_support_jlevy/ansible-ee-test
+    default: quay.io/rhn_support_jlevy/ansible-ee-test
   - description: Tag of the container image to be built
     name: TAG
     type: string

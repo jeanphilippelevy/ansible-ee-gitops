@@ -14,7 +14,7 @@ spec:
       value: >-
         registry.redhat.io/ansible-automation-platform-23/ansible-builder-rhel8:latest
     - name: NAME
-      value: quay.io/repository/rhn_support_jlevy/ansible-ee-test
+      value: quay.io/rhn_support_jlevy/ansible-ee-test
     - name: TAG
       value: test
     - name: CONTEXT
