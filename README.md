@@ -28,7 +28,7 @@ oc secret link pipeline pull-and-push --for=pull,mount
 Go to [Tekton Hub](https://hub.tekton.dev/tekton/task/ansible-builder) and install the `ansible-builder` task.
 
 ```bash
-kubectl -n <MY_NAMESPACE> apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/ansible-builder/0.1/ansible-builder.yaml
+kubectl -n <MY_NAMESPACE> apply -f https://raw.githubusercontent.com/jeanphilippelevy/ansible-ee-gitops/main/ansible-builder.yaml
 ```
 
 ## Webhook Secret Token
