@@ -82,6 +82,8 @@ spec:
       params:
       - name: BUILDER_IMAGE
         value: $(params.ANSIBLE_BUILDER_IMAGE)
+      - name: HUB_URL
+        value: $(params.HUB_URL)
 
     - name: build-image-tag
       taskRef:
