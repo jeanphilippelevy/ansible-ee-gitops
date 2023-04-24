@@ -49,6 +49,10 @@ spec:
     name: TLSVERIFY
     type: string
     default: "false"
+  - description: Automation Hub Url
+    name: HUB_URL
+    type: string
+    default: ""
   tasks:
 
     - name: fetch-repository
