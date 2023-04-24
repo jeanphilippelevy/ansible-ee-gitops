@@ -38,16 +38,31 @@ spec:
       description: The location of the ansible-builder image.
       type: string
       default: quay.io/ansible/ansible-builder:latest
+    - name: HUB_URL
+      type: string
+    - default: hub
+      name: tokenSecretName
+      type: string
+    - default: token
+      name: tokenSecretKey
+      type: string
   steps:
 
-    - name: ansible-builder-create
+    - env:
+        - name: HUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: $(params.tokenSecretKey)
+              name: $(params.tokenSecretName)
+      name: ansible-builder-create
       workingDir: $(workspaces.source.path)
       image: $(params.BUILDER_IMAGE)
       script: |
         #!/bin/sh
-        set -eux -o
+        set -eu -o
+
+        sed -i "s|HUB_URL|$(params.HUB_URL)|g" ansible.cfg
+
+        sed -i "s|HUB_TOKEN|$HUB_TOKEN|g" ansible.cfg
 
         ansible-builder create -f "$(params.FILENAME)" -c "$(params.BUILD_CONTEXT)" --output-filename "$(params.OUTPUT_FILENAME)" -v "$(params.VERBOSITY)"
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 65532
