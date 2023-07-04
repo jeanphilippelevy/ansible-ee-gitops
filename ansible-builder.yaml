@@ -63,6 +63,6 @@ spec:
 
         sed -i "s|HUB_URL|$(params.HUB_URL)|g" ansible.cfg
 
-        sed -i 's|HUB_TOKEN|${HUB_TOKEN}|g' ansible.cfg
+        sed -i "s|HUB_TOKEN|$HUB_TOKEN|g" ansible.cfg 
 
         ansible-builder create -f "$(params.FILENAME)" -c "$(params.BUILD_CONTEXT)" --output-filename "$(params.OUTPUT_FILENAME)" -v "$(params.VERBOSITY)"
