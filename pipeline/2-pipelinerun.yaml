@@ -12,7 +12,7 @@ spec:
       value: main
     - name: ANSIBLE_BUILDER_IMAGE
       value: >-
-        registry.redhat.io/ansible-automation-platform-23/ansible-builder-rhel8:latest
+        registry.redhat.io/ansible-automation-platform-24/ansible-builder-rhel8:latest
     - name: NAME
       value: quay.io/rhn_support_jlevy/ansible-ee-test
     - name: TAG
